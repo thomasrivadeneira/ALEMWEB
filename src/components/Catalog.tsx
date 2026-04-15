@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 const glassSolutions = [
   { title: "Templados", desc: "Resistencia e Impacto", img: "https://picsum.photos/seed/glass1/600/800" },
   { title: "DVH", desc: "Doble Vidriado Hermético", img: "https://picsum.photos/seed/glass2/600/800" },
@@ -29,7 +30,7 @@ export default function Catalog() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 mb-32">
-          {glassSolutions.map((item, idx) => (
+          {glassSolutions.map((item) => (
             <motion.div
               key={item.title}
               whileHover={{ scale: 1.02 }}
