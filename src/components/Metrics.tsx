@@ -43,13 +43,19 @@ export default function Metrics() {
   return (
     <section className="py-32 bg-zinc-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-20"
+        >
           <h2 className="text-4xl font-black tracking-tight mb-4 uppercase">Nuestro Impacto en Números</h2>
           <div className="w-24 h-1 bg-brand-green mx-auto mb-6"></div>
           <p className="text-zinc-500 font-medium text-sm max-w-lg mx-auto uppercase tracking-widest leading-relaxed">
             Monitoreo en tiempo real de proyectos y producción operativa
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-1 bg-zinc-200 border border-zinc-200 mb-12">
           {metrics.map((m, idx) => (
@@ -57,7 +63,8 @@ export default function Metrics() {
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
               className="bg-white py-16 px-10 text-center flex flex-col justify-between h-full"
             >
               <div>
@@ -99,6 +106,7 @@ export default function Metrics() {
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${l.value}%` }}
+                            viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
                             className="h-full bg-brand-green"
                           />

@@ -8,6 +8,8 @@ export default function CTA() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-2xl text-center md:text-left"
           >
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[1.1]">
@@ -21,6 +23,8 @@ export default function CTA() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="flex-shrink-0"
           >
             <button className="bg-brand-green text-white px-14 py-6 font-bold uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-zinc-900 transition-all duration-500 rounded-none shadow-2xl shadow-brand-green/20">

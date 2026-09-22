@@ -13,12 +13,19 @@ const aluminumSolutions = [
   { title: "Paños Fijos", desc: "Integración total de la luz natural con perfiles minimalistas.", img: "https://picsum.photos/seed/alu3/600/600" },
 ];
 
+const VP = { once: true, margin: "-80px" };
+const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } };
+
 export default function Catalog() {
   return (
     <section id="productos" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Soluciones en Vidrio */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        {/* Soluciones en Vidrio — header */}
+        <motion.div
+          variants={fadeUp} initial="hidden" whileInView="visible"
+          viewport={VP} transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8"
+        >
           <div className="max-w-2xl">
             <span className="text-brand-green font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Especialidades</span>
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-zinc-900">Soluciones en Vidrio</h2>
@@ -27,12 +34,14 @@ export default function Catalog() {
           <p className="max-w-md text-zinc-500 font-light text-lg">
             Cristales procesados con los más altos estándares de seguridad y transparencia para proyectos residenciales y comerciales.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 mb-32">
-          {glassSolutions.map((item) => (
+          {glassSolutions.map((item, i) => (
             <motion.div
               key={item.title}
+              variants={fadeUp} initial="hidden" whileInView="visible"
+              viewport={VP} transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
               whileHover={{ scale: 1.02 }}
               className="group relative aspect-[3/4] overflow-hidden bg-zinc-100 cursor-pointer"
             >
@@ -50,19 +59,25 @@ export default function Catalog() {
           ))}
         </div>
 
-        {/* Carpintería de Aluminio */}
-        <div className="mb-16">
+        {/* Carpintería de Aluminio — header */}
+        <motion.div
+          variants={fadeUp} initial="hidden" whileInView="visible"
+          viewport={VP} transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-16"
+        >
           <span className="text-brand-green font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Novedad</span>
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-zinc-900">Carpintería de Aluminio</h2>
           <p className="mt-4 text-zinc-500 font-light text-lg max-w-2xl">
             Líneas Módena y A30. Estructuras robustas con acabados premium para una arquitectura moderna y eficiente.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {aluminumSolutions.map((item) => (
+          {aluminumSolutions.map((item, i) => (
             <motion.div
               key={item.title}
+              variants={fadeUp} initial="hidden" whileInView="visible"
+              viewport={VP} transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.12 }}
               whileHover={{ y: -10 }}
               className="bg-zinc-50 p-10 flex flex-col gap-8 border border-zinc-100"
             >
